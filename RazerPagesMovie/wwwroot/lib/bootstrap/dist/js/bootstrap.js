@@ -2621,7 +2621,7 @@
   var DefaultWhitelist = {
     // Global attributes allowed on any supplied element below.
     '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
-    a: ['target', 'href', 'title', 'rel'],
+    a: ['target', 'href', 'Title', 'rel'],
     area: [],
     b: [],
     br: [],
@@ -2637,7 +2637,7 @@
     h5: [],
     h6: [],
     i: [],
-    img: ['src', 'alt', 'title', 'width', 'height'],
+    img: ['src', 'alt', 'Title', 'width', 'height'],
     li: [],
     ol: [],
     p: [],
@@ -2748,7 +2748,7 @@
   var DefaultType$4 = {
     animation: 'boolean',
     template: 'string',
-    title: '(string|element|function)',
+    Title: '(string|element|function)',
     trigger: 'string',
     delay: '(number|object)',
     html: 'boolean',
@@ -2773,7 +2773,7 @@
     animation: true,
     template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
     trigger: 'hover focus',
-    title: '',
+    Title: '',
     delay: 0,
     html: false,
     selector: false,
@@ -3126,13 +3126,13 @@
     };
 
     _proto.getTitle = function getTitle() {
-      var title = this.element.getAttribute('data-original-title');
+      var Title = this.element.getAttribute('data-original-Title');
 
-      if (!title) {
-        title = typeof this.config.title === 'function' ? this.config.title.call(this.element) : this.config.title;
+      if (!Title) {
+        Title = typeof this.config.Title === 'function' ? this.config.Title.call(this.element) : this.config.Title;
       }
 
-      return title;
+      return Title;
     } // Private
     ;
 
@@ -3205,11 +3205,11 @@
     };
 
     _proto._fixTitle = function _fixTitle() {
-      var titleType = typeof this.element.getAttribute('data-original-title');
+      var TitleType = typeof this.element.getAttribute('data-original-Title');
 
-      if (this.element.getAttribute('title') || titleType !== 'string') {
-        this.element.setAttribute('data-original-title', this.element.getAttribute('title') || '');
-        this.element.setAttribute('title', '');
+      if (this.element.getAttribute('Title') || TitleType !== 'string') {
+        this.element.setAttribute('data-original-Title', this.element.getAttribute('Title') || '');
+        this.element.setAttribute('Title', '');
       }
     };
 
@@ -3304,8 +3304,8 @@
         };
       }
 
-      if (typeof config.title === 'number') {
-        config.title = config.title.toString();
+      if (typeof config.Title === 'number') {
+        config.Title = config.Title.toString();
       }
 
       if (typeof config.content === 'number') {
@@ -3478,7 +3478,7 @@
     SHOW: 'show'
   };
   var Selector$7 = {
-    TITLE: '.popover-header',
+    Title: '.popover-header',
     CONTENT: '.popover-body'
   };
   var Event$7 = {
@@ -3528,7 +3528,7 @@
     _proto.setContent = function setContent() {
       var $tip = $(this.getTipElement()); // We use append for html objects to maintain js events
 
-      this.setElementContent($tip.find(Selector$7.TITLE), this.getTitle());
+      this.setElementContent($tip.find(Selector$7.Title), this.getTitle());
 
       var content = this._getContent();
 
